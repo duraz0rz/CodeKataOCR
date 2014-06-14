@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeKataOCR", "CodeKataOCR\CodeKataOCR.csproj", "{1494CC15-BEC4-45BB-B221-BF58E799BCF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeKataOCRTest", "CodeKataOCRTest\CodeKataOCRTest.csproj", "{9BE0C929-B665-4CA3-B561-483D51269049}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1494CC15-BEC4-45BB-B221-BF58E799BCF7} = {1494CC15-BEC4-45BB-B221-BF58E799BCF7}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
