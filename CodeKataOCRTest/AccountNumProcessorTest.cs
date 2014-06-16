@@ -29,5 +29,37 @@ namespace CodeKataOCRTest
 
             Assert.AreEqual("000000000", accountNum);
         }
+
+        [TestMethod]
+        public void DetermineAccountNumberReadsOtherNumbersCorrectly()
+        {
+            var accountLines = new List<string>() {
+                "    _  _     _  _  _  _  _ ",
+                "  | _| _||_||_ |_   ||_||_|",
+                "  ||_  _|  | _||_|  ||_| _|"
+            };
+
+            var accountNum = processor.DetermineAccountNumber(accountLines);
+
+            Assert.AreEqual("123456789", accountNum);
+        }
+
+        [TestMethod]
+        public void DetermineAccountNumberReadsMultipleNumbersCorrectly()
+        {
+            var accountLines = new List<string>() {
+                "    _  _     _  _  _  _  _ ",
+                "  | _| _||_||_ |_   ||_||_|",
+                "  ||_  _|  | _||_|  ||_| _|",
+                "                           ",
+                " _  _  _  _  _  _  _  _  _ ",
+                "| || || || || || || || || |",
+                "|_||_||_||_||_||_||_||_||_|"
+            };
+
+            var accountNum = processor.DetermineAccountNumber(accountLines);
+
+            Assert.AreEqual("123456789", accountNum);
+        }
     }
 }
